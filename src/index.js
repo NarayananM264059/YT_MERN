@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
 app.use("/api", router);
 
 app.listen(8000, () => {
-    console.log("Server Started at http://localhost:8000");
+    console.log("Server Started at http://localhost:3000");
 });
 
 export default app // for hosting on vercel

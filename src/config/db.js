@@ -1,8 +1,11 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const connectDB = async () => {
     try {
-        const conn = await mongoose.connect(process.env.MONGODB_URL);
+        const conn = await mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost:27017");
         if (conn && conn.connection && conn.connection.host) {
             console.log(`MongoDB connected: ${conn.connection.host}`);
         } else {
