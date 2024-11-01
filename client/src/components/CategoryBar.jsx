@@ -1,11 +1,11 @@
-import React, { useState, useRef } from 'react';
+import  { useState, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from './ui/button';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from '../redux/filterSlice';
 
 const categories = [
-    'All', "music", "gaming", "news", "sports", "technology", "education", "entertainment","comedy", "other", 'Live', 'Fashion', 'Spotlight', 'Travel', 'Food', "New to you", "Trending", "For you", "Following", "Popular", "More"
+    'All', "music", "gaming", "news", "sports", "technology", "education", "entertainment","comedy", 'Fashion', 'Spotlight', 'Travel', 'Food', "New to you", "Trending", "For you", "Popular",
 ];
 
 const HorizontalScroll = () => {
