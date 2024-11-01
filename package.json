@@ -9,7 +9,7 @@
     "start": "node ./src/index.js",
     "dev": "nodemon ./src/index.js"
   },
-  "author": "Nilesh",
+  "author": "Narayanan M",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
