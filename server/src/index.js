@@ -1,3 +1,4 @@
+// ... other imports
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
@@ -6,29 +7,28 @@ import morgan from "morgan";
 import router from "./routes/routes.js";
 import cookieParser from "cookie-parser";
 
-dotenv.config(); //for environement variables
+dotenv.config(); //for environment variables
 
 const app = express(); // express app
 
-//database connection
+// database connection
 connectDB();
 
-//middlewares
-app.use(cookieParser()); //for cookies
-app.use(express.urlencoded({ extended: true })); //to accept url encoded data
-app.use(express.json()); //to accept json data
-app.use(morgan("tiny")); //for logging
-app.use(cors( { origin: "https://youtube-clone-frontend-seven.vercel.app", credentials: true } ));
+// middlewares
+app.use(cookieParser()); // for cookies
+app.use(express.urlencoded({ extended: true })); // to accept url encoded data
+app.use(express.json()); // to accept json data
+app.use(morgan("tiny")); // for logging
+app.use(cors({ origin: "http://localhost:3000", credentials: true })); // Change this line
 
-
-//routes
+// routes
 app.get("/", (req, res) => {
     res.send("Welcome to My Youtube Backend!");
-})
+});
 app.use("/api", router);
 
 app.listen(8000, () => {
-    console.log("Server Started at http://localhost:27017");
+    console.log("Server Started at http://localhost:8000"); // Corrected the port to 8000
 });
 
-export default app 
+export default app;

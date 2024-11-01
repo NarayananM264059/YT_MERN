@@ -7,7 +7,7 @@ export const fetchUserData = createAsyncThunk(
     'user/fetchUserData',
     async (_, { rejectWithValue }) => {
       try {
-        const response = await axios.get('https://youtube-backend-eight.vercel.app/api/user', { withCredentials: true });
+        const response = await axios.get('http://localhost:8000/api/user', { withCredentials: true });
         return response.data.user;
       } catch (error) {
         if (axios.isAxiosError(error) && error.response?.status === 401) {

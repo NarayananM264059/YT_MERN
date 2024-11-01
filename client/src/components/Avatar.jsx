@@ -19,7 +19,7 @@ const AvatarComponent = () => {
     const handleLogout = async() => {
         try {
           const response = await axios.post(
-            "https://youtube-backend-eight.vercel.app/api/user/logout", 
+            "http://localhost:8000/api/user/logout", 
             {}, 
             { withCredentials: true } 
           );

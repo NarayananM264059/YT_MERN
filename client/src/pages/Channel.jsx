@@ -26,7 +26,7 @@ const ChannelPage = () => {
         console.error('No channel handle available');
         return;
       }
-      const response = await axios.get(`https://youtube-backend-eight.vercel.app/api/channel/${params.handle}`, { withCredentials: true });
+      const response = await axios.get(`http://localhost:8000/api/channel/${params.handle}`, { withCredentials: true });
       setData(response.data.channel);
       setIsnotfound(false);
     } catch (error) {
@@ -48,7 +48,7 @@ const ChannelPage = () => {
         return;
       }
       console.log(data._id);
-      const response = await axios.get(`https://youtube-backend-eight.vercel.app/api/videos/channel/${data._id}`, { withCredentials: true });
+      const response = await axios.get(`http://localhost:8000/api/videos/channel/${data._id}`, { withCredentials: true });
       if(response.data.success){
         setVideos(response.data.videos);
       }
@@ -95,9 +95,9 @@ const ChannelPage = () => {
 
       let response;
       if (isSubscribed) {
-        response = await axios.post(`https://youtube-backend-eight.vercel.app/api/channel/unsubscribe/${data._id}`, {}, config);
+        response = await axios.post(`http://localhost:8000/api/channel/unsubscribe/${data._id}`, {}, config);
       } else {
-        response = await axios.post(`https://youtube-backend-eight.vercel.app/api/channel/subscribe/${data._id}`, {}, config);
+        response = await axios.post(`http://localhost:8000/api/channel/subscribe/${data._id}`, {}, config);
       }
 
       if (response.data.success) {
